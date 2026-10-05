@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: leave-approval
+    runtime: docker
+    plan: free
+    region: singapore
+    healthCheckPath: /health
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: FACULTY_SIGNUP_CODE
+        sync: false
+      - key: ADMIN_ACCESS_KEY
+        sync: false

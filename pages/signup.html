@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create Account | Leave Approval</title>
+  <link rel="stylesheet" href="style.css?v=3.3.0">
+</head>
+<body data-page="signup">
+<main class="auth-shell"><div class="auth-box">
+  <p class="eyebrow">JOIN YOUR COLLEGE PORTAL</p><h1>Create an account</h1>
+  <form id="signup-form">
+    <label for="role">Create Account As</label>
+<select id="role" name="role" required>
+  <option value="" selected disabled>Choose Student or Faculty</option>
+  <option value="student">Student</option>
+  <option value="faculty">Faculty</option>
+</select>
+    <label for="name">Full Name</label><input id="name" required maxlength="100" autocomplete="name">
+    <div id="student-fields" hidden>
+      <label for="student-id">Register Number</label><input id="student-id" maxlength="50" pattern="[A-Za-z0-9_-]+" disabled>
+    </div>
+    <div id="faculty-fields" hidden>
+      <label for="staff-id">Staff ID</label><input id="staff-id" maxlength="50" pattern="[A-Za-z0-9_-]+" disabled>
+      <label for="invitation-code">Faculty Invitation Code</label><div class="password-field">
+  <input type="password" id="invitation-code" maxlength="256" autocomplete="off" disabled>
+  <button type="button" class="password-toggle" data-password-target="invitation-code" data-field-label="faculty invitation code" aria-controls="invitation-code" aria-label="Show faculty invitation code" title="Show faculty invitation code">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/>
+      <circle cx="12" cy="12" r="3"/>
+      <path class="eye-slash" d="M3 3 21 21" hidden/>
+    </svg>
+  </button>
+</div>
+      <p class="note">Ask the administrator for this code. Every teacher has a separate account.</p>
+    </div>
+    <label for="email">Email Address</label>
+<input type="email" id="email" name="email" required maxlength="254" autocomplete="username" placeholder="you@example.com">
+    <label for="password">Create Password (at least 12 characters)</label>
+<div class="password-field">
+  <input type="password" id="password" name="password" required maxlength="128" autocomplete="new-password" minlength="12">
+  <button type="button" class="password-toggle" data-password-target="password" data-field-label="password" aria-controls="password" aria-label="Show password" title="Show password">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/>
+      <circle cx="12" cy="12" r="3"/>
+      <path class="eye-slash" d="M3 3 21 21" hidden/>
+    </svg>
+  </button>
+</div>
+    <label for="confirm">Confirm Password</label>
+<div class="password-field">
+  <input type="password" id="confirm" required minlength="12" maxlength="128" autocomplete="new-password">
+  <button type="button" class="password-toggle" data-password-target="confirm" data-field-label="confirm password" aria-controls="confirm" aria-label="Show confirm password" title="Show confirm password">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/>
+      <circle cx="12" cy="12" r="3"/>
+      <path class="eye-slash" d="M3 3 21 21" hidden/>
+    </svg>
+  </button>
+</div>
+    <button id="submit-button" type="submit">Create Account</button>
+  </form>
+  <p id="message" role="status"></p><section id="recovery-result" hidden aria-labelledby="recovery-title">
+  <h2 id="recovery-title">Save your recovery code</h2>
+  <p id="recovery-message"></p>
+  <label for="recovery-value">Your private recovery code</label>
+  <textarea id="recovery-value" readonly spellcheck="false"></textarea>
+  <p class="note">Keep this somewhere private. You need it if you forget your password. It is different from the faculty invitation code.</p>
+  <button type="button" id="download-recovery">Download recovery code</button>
+  <a class="btn secondary" id="continue-login" href="login.html">I saved it — go to login</a>
+</section>
+  <p>Already registered? <a href="login.html">Log in</a></p>
+</div></main>
+  <footer>First Hour Permission &amp; Leave Approval · Version 3.3.0</footer>
+  <script src="password-visibility.js?v=3.3.0" defer></script>
+  <script src="common.js?v=3.3.0" defer></script>
+  <script src="auth.js?v=3.3.0" defer></script>
+</body>
+</html>

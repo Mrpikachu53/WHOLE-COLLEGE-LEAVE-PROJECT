@@ -1,0 +1,65 @@
+LEAVE APPROVAL UPDATE - VERSION 3.3.0
+
+WHAT CHANGED
+The first login page has Student Login, Faculty Login, and Admin Login.
+Faculty Login opens Faculty Approval and Faculty Leave.
+Faculty use the SAME existing email/password account for both options.
+Faculty Approval reviews student applications as before.
+Faculty Leave allows faculty to submit their own leave and first-hour permission.
+Only the submitting faculty member can see their own request history.
+Only an admin session can list all faculty applications and approve/reject them.
+The admin logs in with a private access key (no email/password account required).
+Admin sessions last one hour; changing the key invalidates existing admin sessions.
+
+UPDATE YOUR EXISTING PUBLIC WEBSITE
+1. Extract this ZIP on your computer.
+2. In your existing GitHub repository, upload the contents of its pages folder
+   INSIDE the existing GitHub pages folder. Replace files with the same names.
+   Do not create pages/pages. Upload ALL the new pages and scripts together.
+3. At the main GitHub repository level, replace main.py and render.yaml.
+   The existing Dockerfile and requirements.txt have not changed.
+4. In Render, open your EXISTING leave-approval service and its Environment page.
+   Add an environment variable named ADMIN_ACCESS_KEY.
+   Set its value to a long private key of your choosing (20-128 characters).
+   Use a different key from the faculty signup invitation code.
+   Keep it private. Never add the value to HTML, JavaScript, GitHub, or screenshots.
+5. Save the environment change and deploy the latest code.
+   If your service does not deploy automatically, deploy its latest commit.
+6. Keep DATABASE_URL and FACULTY_SIGNUP_CODE exactly as they already are.
+   Do not create a new database or replace/delete your existing database.
+7. Wait for a successful deployment, then refresh your website with Ctrl+F5.
+8. Open your existing website URL. Choose Login > Faculty Login to see the
+   two faculty options. Use Admin Login with your new key to review faculty requests.
+
+DATABASE PRESERVATION
+Startup creates two new tables: faculty_applications and admin_sessions.
+Existing users, sessions, and student applications are not deleted or recreated.
+The same hosted DATABASE_URL must be retained to keep existing accounts/data.
+This ZIP deliberately contains no database, virtual environment, or private settings.
+
+UPDATE YOUR EXISTING LOCAL PROJECT
+Stop the local server with Ctrl+C. Keep a backup of your project folder.
+Merge this ZIP's project contents into your existing project folder.
+Replace matching CODE files, but KEEP your existing data folder and
+local-settings.json. These private files are not supplied in the ZIP.
+Double-click start.bat. Setup keeps your faculty invitation configuration and
+asks you to choose an admin access key. Typing is hidden; this is normal.
+Open http://127.0.0.1:8002 after the server starts.
+Local and hosted databases are separate. Your hosted accounts will not
+appear in a new empty local database.
+To change the local admin key later, run:
+.venv\Scripts\python.exe setup_app.py --change-admin-key
+
+QUICK CHECK
+- Student creates a request; Faculty Approval can review it.
+- Faculty Leave creates a request; it does not appear in Faculty Approval.
+- Admin Login sees the faculty request and approves or rejects it.
+- The faculty member can see the decision and remarks in Faculty Leave.
+- Another faculty member cannot see that person's faculty applications.
+
+VALIDATION
+13 automated backend tests passed, including request separation, ownership,
+admin-only decisions, key rotation, logout, rate limits and additive schema creation.
+JavaScript syntax and local page/asset links were checked.
+Tests used a temporary SQLite database, never the user's data.
+A full browser test and hosted PostgreSQL deployment were not performed here.

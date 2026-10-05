@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Home | Leave Approval</title>
+  <link rel="stylesheet" href="style.css?v=3.3.0">
+</head>
+<body data-page="student">
+<header><div><p class="eyebrow">LEAVE APPROVAL</p><h1>Student Dashboard</h1></div><button id="logout" type="button" class="secondary">Logout</button></header>
+<p id="account-message" role="status" class="account-message"></p><main id="dashboard" hidden>
+  <h2 id="welcome">Welcome, Student</h2><p id="identity" class="note"></p><div class="cards">
+  <article class="card"><h3>First Hour Permission</h3><p>Request permission to arrive late for the first hour.</p><a class="btn" href="#permission-application">Apply for Permission</a></article>
+  <article class="card"><h3>Leave Application</h3><p>Apply for leave for one day or several days.</p><a class="btn" href="#leave-application">Apply for Leave</a></article>
+  <article class="card"><h3>My Requests</h3><p>Track approvals and read faculty remarks.</p><a class="btn" href="#my-requests">View Status</a></article>
+</div>
+  <section id="permission-application">
+    <h2>First Hour Permission Application</h2><p>Only permission details are needed here.</p>
+    <form id="permission-form">
+      <div class="form-grid"><div><label for="permission-date">Permission Date</label><input type="date" id="permission-date" required></div>
+      <div><label for="arrival-time">Expected Arrival Time</label><input type="time" id="arrival-time" required></div></div>
+      <label for="permission-reason">Reason</label><textarea id="permission-reason" required maxlength="2000"></textarea>
+      <button type="submit">Submit Permission Request</button>
+    </form><p id="permission-message" role="status"></p>
+  </section>
+  <section id="leave-application" hidden>
+    <h2>Leave Application</h2>
+    <form id="leave-form">
+      <div class="form-grid"><div><label for="start-date">Leave Start Date</label><input type="date" id="start-date" required></div>
+      <div><label for="end-date">Leave End Date</label><input type="date" id="end-date" required></div></div>
+      <label for="leave-reason">Reason</label><textarea id="leave-reason" required maxlength="2000"></textarea>
+      <button type="submit">Submit Leave Request</button>
+    </form><p id="leave-message" role="status"></p>
+  </section>
+  <section id="my-requests"><div class="section-heading"><h2>My Requests</h2><button id="refresh" type="button">Refresh</button></div>
+    <p class="note">Updates automatically every 5 seconds while this tab is visible.</p>
+    <p id="load-message" role="status"></p>
+    <div class="table-wrapper"><table><thead><tr><th>ID</th><th>Type</th><th>Date / Dates</th><th>Arrival</th><th>Reason</th><th>Status</th><th>Faculty Remarks</th></tr></thead><tbody id="request-list"></tbody></table></div>
+  </section>
+</main>
+  <footer>First Hour Permission &amp; Leave Approval · Version 3.3.0</footer>
+  <script src="common.js?v=3.3.0" defer></script>
+  <script src="student.js?v=3.3.0" defer></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Faculty Home | Leave Approval</title>
+  <link rel="stylesheet" href="style.css?v=3.3.0">
+</head>
+<body data-page="faculty">
+<header><div><p class="eyebrow">LEAVE APPROVAL</p><h1>Student Approval Dashboard</h1></div><button id="logout" type="button" class="secondary">Logout</button></header>
+<p id="account-message" role="status" class="account-message"></p><main id="dashboard" hidden>
+  <h2 id="welcome">Welcome, Faculty</h2><p id="identity" class="note"></p><nav class="portal-nav" aria-label="Faculty navigation"><a href="faculty-options.html">Faculty Options</a><a href="faculty-leave-home.html">My Faculty Leave</a></nav><div class="cards">
+  <article class="card"><h3>First Hour Permission</h3><p>Review first-hour permission applications.</p><a class="btn" href="#permission">View Requests</a></article>
+  <article class="card"><h3>Leave Approval</h3><p>Approve or reject leave applications.</p><a class="btn" href="#leave">Manage Leave</a></article>
+  <article class="card"><h3>Reports</h3><p>View totals and download request history.</p><a class="btn" href="#reports">View Reports</a></article>
+</div>
+  <div class="section-heading"><p class="note">Updates every 5 seconds while this tab is visible.</p><button id="refresh" type="button">Refresh</button></div>
+  <p id="load-message" role="status"></p><p id="decision-message" role="status"></p><section id="permission"><h2>First Hour Permission Requests</h2><p id="permission-empty" class="note"></p>
+<div class="table-wrapper"><table><thead><tr><th>ID</th><th>Student / Register No.</th><th>Date / Arrival</th><th>Reason</th><th>Status</th><th>Remarks</th><th>Action</th></tr></thead><tbody id="permission-list"></tbody></table></div></section><section id="leave"><h2>Leave Requests</h2><p id="leave-empty" class="note"></p>
+<div class="table-wrapper"><table><thead><tr><th>ID</th><th>Student / Register No.</th><th>Dates</th><th>Reason</th><th>Status</th><th>Remarks</th><th>Action</th></tr></thead><tbody id="leave-list"></tbody></table></div></section>
+  <section id="reports"><h2>Request Reports</h2>
+    <div class="stats"><div>Total <strong id="total-count">0</strong></div><div>Pending <strong id="pending-count">0</strong></div><div>Approved <strong id="approved-count">0</strong></div><div>Rejected <strong id="rejected-count">0</strong></div></div>
+    <button id="download-report" type="button" disabled>Download CSV Report</button>
+  </section>
+</main>
+  <footer>First Hour Permission &amp; Leave Approval · Version 3.3.0</footer>
+  <script src="common.js?v=3.3.0" defer></script>
+  <script src="faculty.js?v=3.3.0" defer></script>
+</body>
+</html>

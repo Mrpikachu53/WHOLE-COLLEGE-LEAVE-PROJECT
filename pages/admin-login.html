@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin Login | Leave Approval</title><link rel="stylesheet" href="style.css?v=3.3.0"></head>
+<body><main class="auth-shell"><div class="auth-box">
+<p class="eyebrow">FIRST HOUR PERMISSION &amp; LEAVE APPROVAL</p>
+<h1>Admin Login</h1><p>Enter your private access key to review faculty requests.</p>
+<form id="admin-form">
+<label for="access-key">Admin Access Key</label>
+<div class="password-field"><input id="access-key" type="password" required maxlength="256" autocomplete="current-password">
+<button type="button" class="password-toggle"
+            data-password-target="access-key" data-field-label="access-key"
+            aria-controls="access-key" aria-label="Show access key"
+            title="Show access key">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/>
+              <circle cx="12" cy="12" r="3"/>
+              <path class="eye-slash" d="M3 3 21 21" hidden/>
+            </svg>
+          </button>
+</div><button id="submit-button" type="submit">Login as Admin</button>
+</form><p id="message" role="status"></p><p><a href="login.html">Back to Role Selection</a></p>
+</div></main>
+<script src="common.js?v=3.3.0" defer></script>
+<script src="password-visibility.js?v=3.3.0" defer></script>
+<script src="admin-login.js?v=3.3.0" defer></script>
+</body></html>

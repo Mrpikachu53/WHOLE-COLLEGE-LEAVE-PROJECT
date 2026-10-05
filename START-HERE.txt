@@ -1,0 +1,8 @@
+Start with UPDATE-GUIDE.txt.
+
+Already hosted on Render? Follow UPDATE YOUR EXISTING PUBLIC WEBSITE.
+Keep the existing DATABASE_URL. Add ADMIN_ACCESS_KEY to Render Environment.
+
+Running locally? Merge code into your existing folder, keeping data and
+local-settings.json, then double-click start.bat.
+Open http://127.0.0.1:8002 after startup. Do not open login HTML directly.
