@@ -7,7 +7,16 @@
   <link rel="stylesheet" href="style.css?v=3.3.0">
 </head>
 <body data-page="faculty-leave">
-<header><div><p class="eyebrow">LEAVE APPROVAL</p><h1>Faculty Dashboard</h1></div><button id="logout" type="button" class="secondary">Logout</button></header>
+<header>
+  <div>
+    <p class="eyebrow">LEAVE APPROVAL</p>
+    <h1>Faculty Dashboard</h1>
+  </div>
+  <div class="header-actions">
+    <a href="login.html" class="btn secondary">Back to Role Selection</a>
+    <button id="logout" type="button" class="secondary">Logout</button>
+  </div>
+</header>
 <p id="account-message" role="status" class="account-message"></p><main id="dashboard" hidden>
   <h2 id="welcome">Welcome, Faculty</h2><p id="identity" class="note"></p><nav class="portal-nav" aria-label="Faculty navigation"><a href="faculty-options.html">Faculty Options</a><a href="faculty-home.html">Approve Student Requests</a></nav><div class="cards">
   <article class="card"><h3>First Hour Permission</h3><p>Request permission to arrive late for the first hour.</p><a class="btn" href="#permission-application">Apply for Permission</a></article>
