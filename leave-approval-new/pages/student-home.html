@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Faculty Home | Leave Approval</title>
-  <link rel="stylesheet" href="style.css?v=3.3.0">
+  <title>Student Home | Leave Approval</title>
+  <link rel="stylesheet" href="style.css?v=3.4.0">
 </head>
-<body data-page="faculty-leave">
+<body data-page="student">
 <header>
   <div>
     <p class="eyebrow">LEAVE APPROVAL</p>
-    <h1>Faculty Dashboard</h1>
+    <h1>Student Dashboard</h1>
   </div>
   <div class="header-actions">
     <a href="login.html" class="btn secondary">Back to Role Selection</a>
@@ -18,10 +18,14 @@
   </div>
 </header>
 <p id="account-message" role="status" class="account-message"></p><main id="dashboard" hidden>
-  <h2 id="welcome">Welcome, Faculty</h2><p id="identity" class="note"></p><nav class="portal-nav" aria-label="Faculty navigation"><a href="faculty-options.html">Faculty Options</a><a href="faculty-home.html">Approve Student Requests</a></nav><div class="cards">
+  <h2 id="welcome">Welcome, Student</h2><p id="identity" class="note"></p>
+  <div class="dashboard-banner dashboard-banner-student" role="img" aria-label="Student study desk beside a college campus window">
+    <div><p class="banner-kicker">STUDENT SERVICES</p><h2>Your academic day, organized.</h2><p>Submit requests clearly, follow decisions, and keep your campus routine moving.</p></div>
+  </div>
+  <div class="cards">
   <article class="card"><h3>First Hour Permission</h3><p>Request permission to arrive late for the first hour.</p><a class="btn" href="#permission-application">Apply for Permission</a></article>
   <article class="card"><h3>Leave Application</h3><p>Apply for leave for one day or several days.</p><a class="btn" href="#leave-application">Apply for Leave</a></article>
-  <article class="card"><h3>My Requests</h3><p>Track approvals and read admin remarks.</p><a class="btn" href="#my-requests">View Status</a></article>
+  <article class="card"><h3>My Requests</h3><p>Track approvals and read faculty remarks.</p><a class="btn" href="#my-requests">View Status</a></article>
 </div>
   <section id="permission-application">
     <h2>First Hour Permission Application</h2><p>Only permission details are needed here.</p>
@@ -44,11 +48,11 @@
   <section id="my-requests"><div class="section-heading"><h2>My Requests</h2><button id="refresh" type="button">Refresh</button></div>
     <p class="note">Updates automatically every 5 seconds while this tab is visible.</p>
     <p id="load-message" role="status"></p>
-    <div class="table-wrapper"><table><thead><tr><th>ID</th><th>Type</th><th>Date / Dates</th><th>Arrival</th><th>Reason</th><th>Status</th><th>Admin Remarks</th></tr></thead><tbody id="request-list"></tbody></table></div>
+    <div class="table-wrapper"><table><thead><tr><th>ID</th><th>Type</th><th>Date / Dates</th><th>Arrival</th><th>Reason</th><th>Status</th><th>Faculty Remarks</th></tr></thead><tbody id="request-list"></tbody></table></div>
   </section>
 </main>
-  <footer>First Hour Permission &amp; Leave Approval · Version 3.3.0</footer>
-  <script src="common.js?v=3.3.0" defer></script>
-  <script src="student.js?v=3.3.0" defer></script>
+  <footer>First Hour Permission &amp; Leave Approval · Version 3.4.0</footer>
+  <script src="common.js?v=3.4.0" defer></script>
+  <script src="student.js?v=3.4.0" defer></script>
 </body>
 </html>

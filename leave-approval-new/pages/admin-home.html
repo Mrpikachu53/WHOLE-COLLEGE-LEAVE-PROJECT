@@ -4,21 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Admin Home | Leave Approval</title>
-  <link rel="stylesheet" href="style.css?v=3.3.0">
+  <link rel="stylesheet" href="style.css?v=3.4.0">
 </head>
 <body data-page="admin">
-<header>
-  <div>
-    <p class="eyebrow">LEAVE APPROVAL</p>
-    <h1>Admin Dashboard</h1>
-  </div>
-  <div class="header-actions">
-    <a href="login.html" class="btn secondary">Back to Role Selection</a>
-    <button id="logout" type="button" class="secondary">Logout</button>
-  </div>
-</header>
+<header><div><p class="eyebrow">LEAVE APPROVAL</p><h1>Admin Dashboard</h1></div><button id="logout" type="button" class="secondary">Logout</button></header>
 <p id="account-message" role="status" class="account-message"></p><main id="dashboard" hidden>
-  <h2 id="welcome">Welcome, Administrator</h2><p id="identity" class="note"></p><div class="cards">
+  <h2 id="welcome">Welcome, Administrator</h2><p id="identity" class="note"></p>
+  <div class="dashboard-banner dashboard-banner-admin" role="img" aria-label="College administration desk with organized records">
+    <div><p class="banner-kicker">ADMINISTRATION CENTER</p><h2>A clearer view of campus operations.</h2><p>Manage faculty requests with organized records and a calm, focused workspace.</p></div>
+  </div>
+  <div class="cards">
   <article class="card"><h3>First Hour Permission</h3><p>Review faculty first-hour permission applications.</p><a class="btn" href="#permission">View Requests</a></article>
   <article class="card"><h3>Leave Approval</h3><p>Approve or reject faculty leave applications.</p><a class="btn" href="#leave">Manage Leave</a></article>
   <article class="card"><h3>Reports</h3><p>View totals and download request history.</p><a class="btn" href="#reports">View Reports</a></article>
@@ -32,8 +27,8 @@
     <button id="download-report" type="button" disabled>Download CSV Report</button>
   </section>
 </main>
-  <footer>First Hour Permission &amp; Leave Approval · Version 3.3.0</footer>
-  <script src="common.js?v=3.3.0" defer></script>
-  <script src="faculty.js?v=3.3.0" defer></script>
+  <footer>First Hour Permission &amp; Leave Approval · Version 3.4.0</footer>
+  <script src="common.js?v=3.4.0" defer></script>
+  <script src="faculty.js?v=3.4.0" defer></script>
 </body>
 </html>

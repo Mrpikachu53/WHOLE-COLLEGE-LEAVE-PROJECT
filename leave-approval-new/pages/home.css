@@ -11,7 +11,8 @@ html {
 }
 
 body {
-  background: #f5f7fb;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f7fbff 0%, #eef5fb 100%);
   color: #1f2937;
 }
 
@@ -21,8 +22,9 @@ nav {
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  background: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 24px rgba(13, 37, 63, 0.08);
+  backdrop-filter: blur(16px);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -77,17 +79,26 @@ a:focus-visible {
 .hero {
   max-width: 1400px;
   margin: auto;
-  min-height: 560px;
+  min-height: 610px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 70px 7%;
   gap: 55px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 34px 34px;
+  background:
+    linear-gradient(90deg, rgba(3, 19, 39, 0.96) 0%, rgba(3, 19, 39, 0.82) 34%, rgba(3, 19, 39, 0.24) 72%, rgba(3, 19, 39, 0.1) 100%),
+    url("assets/campus-hero.webp") center / cover;
+  box-shadow: 0 24px 55px rgba(10, 39, 66, 0.2);
 }
 
 .hero-content {
   flex: 1;
   max-width: 650px;
+  position: relative;
+  z-index: 1;
 }
 
 .eyebrow {
@@ -98,18 +109,23 @@ a:focus-visible {
   font-size: 14px;
 }
 
+.hero .eyebrow {
+  color: #8dd8ff;
+}
+
 .hero h1 {
   font-size: clamp(36px, 4.5vw, 54px);
   line-height: 1.15;
   margin-bottom: 22px;
+  color: white;
 }
 
 .hero h1 span {
-  color: #2563eb;
+  color: #8dd8ff;
 }
 
 .hero-description {
-  color: #5b6472;
+  color: #e2edf7;
   font-size: 19px;
   line-height: 1.7;
   margin-bottom: 28px;
@@ -135,7 +151,10 @@ a:focus-visible {
   width: 350px;
   max-width: 100%;
   padding: 35px;
-  background: white;
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.93);
+  backdrop-filter: blur(12px);
   border-radius: 22px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
@@ -182,10 +201,35 @@ a:focus-visible {
   font-size: 15px;
 }
 
+.hero-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 36px;
+  color: #dbeafe;
+}
+
+.hero-metrics div {
+  display: grid;
+  gap: 2px;
+  min-width: 110px;
+}
+
+.hero-metrics strong {
+  font-size: 25px;
+  color: white;
+}
+
+.hero-metrics span {
+  font-size: 13px;
+  color: #b8cee2;
+}
+
 .about {
   padding: 75px 8%;
   background: white;
   text-align: center;
+  border-bottom: 1px solid #e2ebf4;
 }
 
 .section-title {
@@ -203,6 +247,76 @@ a:focus-visible {
   color: #6b7280;
   font-size: 18px;
   line-height: 1.8;
+}
+
+.experience {
+  padding: 82px 8%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.experience-card {
+  overflow: hidden;
+  border-radius: 22px;
+  background: white;
+  color: #1f2937;
+  text-decoration: none;
+  border: 1px solid #dce7f2;
+  box-shadow: 0 12px 30px rgba(13, 37, 63, 0.08);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.experience-card:hover {
+  color: #1f2937;
+  transform: translateY(-7px);
+  box-shadow: 0 20px 38px rgba(13, 37, 63, 0.14);
+}
+
+.experience-image {
+  min-height: 180px;
+  background-position: center;
+  background-size: cover;
+}
+
+.student-image { background-image: url("assets/student-academic.webp"); }
+.faculty-image { background-image: url("assets/faculty-review.webp"); }
+.admin-image { background-image: url("assets/admin-office.webp"); }
+
+.experience-body {
+  padding: 25px;
+}
+
+.card-tag {
+  color: #0e7490;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.experience-body h3 {
+  margin: 10px 0 8px;
+  font-size: 24px;
+}
+
+.experience-body p {
+  min-height: 56px;
+  color: #64748b;
+  line-height: 1.65;
+}
+
+.card-link {
+  display: inline-flex;
+  gap: 8px;
+  margin-top: 12px;
+  color: #1d4ed8;
+  font-weight: 800;
 }
 
 .features {
@@ -223,6 +337,13 @@ a:focus-visible {
   padding: 30px;
   border-radius: 16px;
   border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 20px rgba(13, 37, 63, 0.04);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 28px rgba(13, 37, 63, 0.1);
 }
 
 .feature-number {
@@ -248,7 +369,7 @@ a:focus-visible {
 
 .start {
   padding: 55px 20px;
-  background: #eaf0ff;
+  background: linear-gradient(135deg, #dff5ff, #e8e7ff);
   text-align: center;
 }
 
@@ -292,6 +413,13 @@ footer {
   .feature-container {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media (max-width: 600px) {
@@ -322,12 +450,18 @@ footer {
   }
 
   .about,
-  .features {
+  .features,
+  .experience {
     padding: 50px 20px;
   }
 
   .section-title h2 {
     font-size: 30px;
+  }
+
+  .hero-metrics {
+    justify-content: center;
+    gap: 16px;
   }
 }
 

@@ -1,4 +1,4 @@
-LEAVE APPROVAL UPDATE - VERSION 3.3.0
+LEAVE APPROVAL UPDATE - VERSION 3.4.0
 
 WHAT CHANGED
 The first login page has Student Login, Faculty Login, and Admin Login.

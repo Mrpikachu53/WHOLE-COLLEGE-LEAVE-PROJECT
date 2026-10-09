@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Faculty Approval Login | Leave Approval</title>
-  <link rel="stylesheet" href="style.css?v=3.3.0">
+  <title>Student Login | Leave Approval</title>
+  <link rel="stylesheet" href="style.css?v=3.4.0">
 </head>
-<body data-page="login">
+<body data-page="login" class="auth-page auth-student">
   <main class="auth-shell">
     <div class="auth-box">
       <p class="eyebrow">FIRST HOUR PERMISSION &amp; LEAVE APPROVAL</p>
-      <h1>Faculty Approval Login</h1>
-      <p>Sign in to review student applications.</p>
+      <h1>Student Login</h1>
+      <p>Sign in to apply for permission or leave.</p>
       <form id="login-form">
-        <input type="hidden" id="role" name="role" value="faculty">
+        <input type="hidden" id="role" name="role" value="student">
         <label for="email">Email Address</label>
         <input type="email" id="email" name="email"
           placeholder="Enter your email" autocomplete="username"
@@ -35,21 +35,17 @@
           </button>
         </div>
         <p class="right">
-          <a href="forgot-password.html?role=faculty">Forgot password?</a>
+          <a href="forgot-password.html?role=student">Forgot password?</a>
         </p>
-        <button id="submit-button" type="submit">Login as Faculty</button>
+        <button id="submit-button" type="submit">Login as Student</button>
       </form>
       <p id="message" role="status"></p>
-      <p>New here? <a href="signup.html?role=faculty">Create an account</a></p>
-      <p class="note">
-        Use your own email and password.
-        The faculty invitation code is needed only when creating an account.
-      </p>
-      <p><a href="faculty-options.html">Back to Faculty Options</a></p>
+      <p>New here? <a href="signup.html?role=student">Create an account</a></p>
+      <p><a href="login.html">Back to Role Selection</a></p>
     </div>
   </main>
-  <script src="password-visibility.js?v=3.3.0" defer></script>
-  <script src="common.js?v=3.3.0" defer></script>
-  <script src="auth.js?v=3.3.0" defer></script>
+  <script src="password-visibility.js?v=3.4.0" defer></script>
+  <script src="common.js?v=3.4.0" defer></script>
+  <script src="auth.js?v=3.4.0" defer></script>
 </body>
 </html>

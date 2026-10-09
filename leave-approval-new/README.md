@@ -1,4 +1,4 @@
-# First Hour Permission & Leave Approval — 3.3.0
+# First Hour Permission & Leave Approval — 3.4.0
 
 Read **UPDATE-GUIDE.txt** for the existing Render website update and local setup.
 

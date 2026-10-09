@@ -22,7 +22,7 @@ from sqlalchemy.exc import IntegrityError
 from starlette.middleware.trustedhost import TrustedHostMiddleware
 
 BASE = Path(__file__).resolve().parent
-APP_VERSION = '3.3.0'
+APP_VERSION = '3.4.0'
 DATA = BASE / 'data'
 DATA.mkdir(exist_ok=True)
 PRODUCTION = os.getenv('APP_ENV', 'development') == 'production'
@@ -357,7 +357,7 @@ def decide_request(request_id: int, data: Decision, user=Depends(current_user)):
 def admin_key_configuration():
     key = os.getenv('ADMIN_ACCESS_KEY', '')
     if key:
-        return ('plain', key) if 8 <= len(key) <= 10 else None
+        return ('plain', key) if 20 <= len(key) <= 256 else None
     if not PRODUCTION:
         try:
             value = json.loads((BASE / 'local-settings.json').read_text())['admin_access_hash']

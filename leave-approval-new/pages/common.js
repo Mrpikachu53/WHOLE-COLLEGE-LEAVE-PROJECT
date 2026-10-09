@@ -1,5 +1,5 @@
 'use strict';
-const APP_VERSION = '3.3.0';
+const APP_VERSION = '3.4.0';
 const get = id => document.getElementById(id);
 function notify(id, message, error = false) {
   get(id).textContent = message;
