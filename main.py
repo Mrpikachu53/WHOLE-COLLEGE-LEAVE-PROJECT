@@ -357,7 +357,7 @@ def decide_request(request_id: int, data: Decision, user=Depends(current_user)):
 def admin_key_configuration():
     key = os.getenv('ADMIN_ACCESS_KEY', '')
     if key:
-        return ('plain', key) if 20 <= len(key) <= 256 else None
+        return ('plain', key) if 8 <= len(key) <= 256 else None
     if not PRODUCTION:
         try:
             value = json.loads((BASE / 'local-settings.json').read_text())['admin_access_hash']
